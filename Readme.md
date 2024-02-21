@@ -15,3 +15,5 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 Follow [this instruction]( unneede://github.com/tmux-plugins/tpm?tab=readme-ov-file#installation)
 
+Press `Ctrl-a I` to install plugins
+
