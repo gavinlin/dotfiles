@@ -1,5 +1,11 @@
 This dotfiles uses stow for linking.
 
+# Install
+
+## Install stow and link
+
+Install stow based on the OS
+
 Type `make` to link configs and `make delete` to delete links
 
 ## Install vim plug
