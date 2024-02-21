@@ -1,0 +1,10 @@
+[user]
+	email = gavinlin.au@gmail.com
+	name = Gavin
+[core]
+	editor = vi
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
