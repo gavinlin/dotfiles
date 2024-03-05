@@ -29,3 +29,4 @@ Press `Ctrl-a I` to install plugins
 - fzf
 - zoxide
 - lsd
+- ripgrep
