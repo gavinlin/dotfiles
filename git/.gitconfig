@@ -10,7 +10,7 @@
 	email = gavinlin.au@gmail.com
 	name = Gavin
 [core]
-	editor = vi
+	editor = nvim
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
 	ui = true
