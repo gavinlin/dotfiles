@@ -15,13 +15,10 @@ plugins=(
 	git
 	zsh-autosuggestions
 	zsh-vi-mode
-	zsh-syntax-highlight
+	zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
-
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
 
 if command -v "nvim" &> /dev/null; then
   alias vim="nvim"
