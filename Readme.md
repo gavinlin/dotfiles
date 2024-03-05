@@ -23,3 +23,9 @@ Follow [this instruction]( unneede://github.com/tmux-plugins/tpm?tab=readme-ov-f
 
 Press `Ctrl-a I` to install plugins
 
+## Apps
+
+- bat
+- fzf
+- zoxide
+- lsd
