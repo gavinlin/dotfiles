@@ -4,7 +4,7 @@
         required = true
         clean = git-lfs clean -- %f
 [protocol]
-        version = 2
+	version = 2
 
 [user]
 	email = gavinlin.au@gmail.com
@@ -37,3 +37,5 @@
 	ci = commit
 	st = status
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[trace2]
+	eventTarget = af_unix:dgram:/tmp/olly-git-trace2.sock
