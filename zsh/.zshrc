@@ -4,6 +4,8 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
   ZSH_THEME="powerlevel10k/powerlevel10k"
+elif [[ -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]]; then
+  ZSH_THEME="powerlevel10k/powerlevel10k"
 else
   ZSH_THEME="robbyrussell"
 fi
