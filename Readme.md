@@ -17,6 +17,12 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
+## Install nvim lazy plug
+
+```bash
+:Lazy
+```
+
 ## Tmux tpm
 
 Follow [this instruction]( unneede://github.com/tmux-plugins/tpm?tab=readme-ov-file#installation)

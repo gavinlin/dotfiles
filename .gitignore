@@ -7,3 +7,6 @@ vim/.vim/colors/*
 vim/.vim/plugged/*
 !vim/.vim/plugged/.gitkeep
 *.swp
+
+zsh/.zsh_custom/*
+!zsh/.zsh_custom/.gitkeep

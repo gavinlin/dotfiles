@@ -4,7 +4,14 @@ return {
   config = function()
     local treesitterConfig = require("nvim-treesitter.configs")
     treesitterConfig.setup({
-      ensure_installed = { "c", "lua", "vimdoc", "markdown", "markdown_inline" },
+      ensure_installed = {
+        "c",
+        "lua",
+        "vimdoc",
+        "markdown",
+        "markdown_inline",
+        "bash",
+      },
       highlight = { enable = true },
       indent = { enable = true },
     })

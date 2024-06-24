@@ -76,3 +76,9 @@ eval "$(zoxide init zsh --cmd cd)"
 
 VI_MODE_SET_CURSOR=true
 
+include () {
+  [[ -f "$1" ]] && source "$1"
+}
+
+include .zsh_custom/config.zsh
+
