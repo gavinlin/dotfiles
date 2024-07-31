@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls" },
+        ensure_installed = { "lua_ls", "gopls" },
       })
     end
   },
@@ -18,9 +18,23 @@ return {
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require("lspconfig")
+      local util = require "lspconfig/util"
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
       })
+      lspconfig.gopls.setup {
+        capabilities = capabilities,
+        cmd = { "gopls" },
+        filetypes = { "go", "gomod", "gowork", "gotmpl" },
+        root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+        settings = {
+          completeUnimported = true,
+          usePlaceholders = true,
+          analyses = {
+            unusedparams = true,
+          },
+        },
+      }
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('UserLspConfig', {}),
         callback = function()
