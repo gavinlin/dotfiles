@@ -7,12 +7,5 @@ return {
   end,
   config = function()
     local wk = require("which-key")
-    wk.register({
-      f = {
-        name = "file",
-        f = { "<cmd>Telescope find_files<cr>", "Find File" },
-        g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
-      }
-    }, { prefix = "<leader>" })
   end
 }
