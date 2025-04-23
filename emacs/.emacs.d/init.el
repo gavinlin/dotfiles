@@ -1,4 +1,3 @@
-
 (require 'package)
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
@@ -25,15 +24,13 @@
 (require 'org-config)
 (require 'completion)
 (require 'snippets)
-
+(require 'version-control)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(cape corfu counsel doom-themes evil-org fzf marginalia orderless
-	  org-bullets org-modern vertico yasnippet yasnippet-snippets)))
+ '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

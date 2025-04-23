@@ -1,4 +1,4 @@
-;; Yasnippet setup
+;; Snippet support with yasnippet and safe integration with corfu
 
 (use-package yasnippet
   :init
@@ -7,16 +7,16 @@
 (use-package yasnippet-snippets
   :after yasnippet)
 
-(add-hook 'org-mode-hook #'yas-minor-mode)
+;; Enable yasnippet in text/org modes too
+(dolist (hook '(prog-mode-hook text-mode-hook org-mode-hook))
+  (add-hook hook #'yas-minor-mode))
 
-;; Integrate yasnippet with corfu
-(defun corfu-enable-yas ()
-  "Enable yasnippet integration with corfu."
-  (setq-local completion-at-point-functions
-              (list (cape-super-capf
-                     #'yasnippet-capf
-                     (cape-capf-buster #'completion-at-point)))))
+;; Optional: set up snippet directory
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"
+        yasnippet-snippets-dir))
 
-(add-hook 'prog-mode-hook #'corfu-enable-yas)
+;; Optional: enable yas as fallback if corfu/cape miss
+;; Avoid broken CAPF setup by NOT inserting yasnippet-capf directly
 
 (provide 'snippets)
