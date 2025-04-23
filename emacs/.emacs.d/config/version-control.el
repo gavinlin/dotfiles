@@ -18,6 +18,12 @@
     (shell-command "git push"))
   (message "Org files synced!"))
 
+(defvar org-sync-prefix-map (make-sparse-keymap "Org sync commands"))
+(define-key global-map (kbd "C-c o") org-sync-prefix-map)
+
+(which-key-add-key-based-replacements
+  "C-c o" "Org sync commands")
+
 ;; Bind to key
 (global-set-key (kbd "C-c o s") 'my/org-sync-git)
 
