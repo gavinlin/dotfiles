@@ -68,7 +68,6 @@
   :ensure t
   :custom
   (org-roam-directory (file-truename "~/workspace/org/roam/"))
-  (org-roam-database-connector (expand-file-name "org-roam.db" org-roam-directory)) ;; move db to org-roam-directory
   (org-roam-completion-everywhere t)
   (org-roam-capture-templates
    '(("d" "default" plain "%?"
