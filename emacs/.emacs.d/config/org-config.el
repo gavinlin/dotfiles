@@ -61,4 +61,33 @@
 ;; Bind org-weekly-review to key
 (global-set-key (kbd "C-c w") 'my/org-weekly-review)
 
+;; Org-roam
+(define-prefix-command 'org-roam-map)
+(global-set-key (kbd "C-c n") 'org-roam-map)
+(use-package org-roam
+  :ensure t
+  :custom
+  (org-roam-directory (file-truename "~/workspace/org/roam/"))
+  (org-roam-database-connector (expand-file-name "org-roam.db" org-roam-directory)) ;; move db to org-roam-directory
+  (org-roam-completion-everywhere t)
+  (org-roam-capture-templates
+   '(("d" "default" plain "%?"
+      :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+			 "#+title: ${title}\n#+date: %U\n\n")
+      :unnarrowed t)
+     ("f" "fleeting" plain "%?"
+      :target (file+head "fleeting/%<%Y%m%d%H%M%S>-${slug}.org"
+                         "#+title: ${title}\n#+date: %U\n\nCaptured as a fleeting note.\n\n")
+      :unnarrowed t)
+     ("p" "permanent" plain "%?"
+      :target (file+head "permanent/%<%Y%m%d%H%M%S>-${slug}.org"
+                         "#+title: ${title}\n#+date: %U\n\n* Idea\n\n")
+      :unnarrowed t)))
+  :bind (("C-c n l" . org-roam-buffer-toggle)
+	 ("C-c n f" . org-roam-node-find)
+	 ("C-c n i" . org-roam-node-insert)
+	 ("C-c n c" . org-roam-capture))
+  :config
+  (org-roam-db-autosync-mode))
+
 (provide 'org-config)
