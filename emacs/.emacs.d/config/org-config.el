@@ -61,6 +61,19 @@
 ;; Bind org-weekly-review to key
 (global-set-key (kbd "C-c w") 'my/org-weekly-review)
 
+(defun my/org-brag-document()
+  "Record my achievement yearly"
+  (interactive)
+  (let* ((year (format-time-string "%Y"))
+	 (filename (format "~/workspace/org/brag/brag-%s.org" year)))
+    (unless (file-exists-p filename)
+      (with-temp-file filename
+	(insert (format "#+TITLE: Record My %s Achievement\n#+AUTHOR: Gavin Lin\n\n* Goals for this year\n\n* Goals for next year\n\n* Projects\n\n* Collaboration & mentorship\n\n* Design doc\n\n* Company building\n\n* What you learned\n\n* Outside of work\n" year))))
+    (find-file filename)))
+
+;; Bind org-brag-document to key
+(global-set-key (kbd "C-c b") #'my/org-brag-document)
+
 ;; Org-roam
 (define-prefix-command 'org-roam-map)
 (global-set-key (kbd "C-c n") 'org-roam-map)
