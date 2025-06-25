@@ -36,3 +36,15 @@ Press `Ctrl-a I` to install plugins
 - zoxide
 - lsd
 - ripgrep
+
+## Font install
+
+### For emacs
+
+```
+brew install font-fira-code
+```
+
+```
+ M-x nerd-icons-install-fonts
+```
